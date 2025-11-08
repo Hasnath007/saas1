@@ -20,22 +20,22 @@ export function Dashboard() {
   ];
 
   return (
-    <div className="max-w-[1440px] mx-auto">
+    <div className="w-full max-w-[1440px] mx-auto px-2"> {/* responsive and padded container */}
       <h1 className="mb-6">Dashboard</h1>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 w-full">
         {kpis.map((kpi, index) => {
           const Icon = kpi.icon;
           return (
             <div key={index} className="bg-white p-6 border border-gray-200">
               <div className="flex items-start justify-between mb-4">
-                <div className="p-3 bg-[#1E7A7A]/10">
-                  <Icon className="w-6 h-6 text-[#1E7A7A]" />
+                <div className="p-3 bg-blue-100">
+                  <Icon className="w-6 h-6 text-blue-600" />
                 </div>
                 <span className="text-sm text-green-600">{kpi.change}</span>
               </div>
-              <div className="text-3xl font-bold text-[#2B2B2B] mb-1">{kpi.value}</div>
+              <div className="text-3xl font-bold text-blue-600 mb-1">{kpi.value}</div>
               <div className="text-sm text-gray-600">{kpi.label}</div>
             </div>
           );
@@ -43,33 +43,33 @@ export function Dashboard() {
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-white p-6 border border-gray-200 mb-6">
+      <div className="bg-white p-6 border border-gray-200 mb-6 w-full">
         <h3 className="mb-4">Quick Actions</h3>
         <div className="flex flex-wrap gap-3">
-          <Button className="bg-[#1E7A7A] hover:bg-[#1E7A7A]/90 text-white gap-2">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white gap-2">
             <Upload className="w-4 h-4" />
             Upload Leads
           </Button>
-          <Button className="bg-[#336699] hover:bg-[#336699]/90 text-white gap-2">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white gap-2">
             <Clock className="w-4 h-4" />
             Schedule Follow-Up
           </Button>
-          <Button className="bg-[#336699] hover:bg-[#336699]/90 text-white gap-2">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white gap-2">
             <Eye className="w-4 h-4" />
             View Appointments
           </Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
         {/* Call Activity Feed */}
-        <div className="lg:col-span-2 bg-white border border-gray-200">
+        <div className="lg:col-span-2 bg-white border border-gray-200 w-full">
           <div className="p-6 border-b border-gray-200">
             <h3>Call Activity Feed</h3>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-[#F8FAFB]">
+          <div className="overflow-x-auto w-full">
+            <table className="min-w-[600px] w-full">
+              <thead className="bg-blue-50">
                 <tr>
                   <th className="px-6 py-3 text-left text-sm text-gray-600">Lead Name</th>
                   <th className="px-6 py-3 text-left text-sm text-gray-600">Phone</th>
@@ -113,13 +113,13 @@ export function Dashboard() {
         </div>
 
         {/* Right Panel - Subscription Summary */}
-        <div className="bg-white border border-gray-200">
+        <div className="bg-white border border-gray-200 w-full">
           <div className="p-6 border-b border-gray-200">
             <h3>Subscription Plan</h3>
           </div>
           <div className="p-6">
             <div className="mb-6">
-              <div className="text-2xl font-bold text-[#2B2B2B] mb-1">Pro Plan</div>
+              <div className="text-2xl font-bold text-blue-600 mb-1">Pro Plan</div>
               <div className="text-sm text-gray-600">$199/month</div>
             </div>
             
@@ -140,7 +140,7 @@ export function Dashboard() {
               <div className="text-xs text-amber-600 mt-2">⚠️ 85% of calls used</div>
             </div>
 
-            <Button className="w-full bg-[#1E7A7A] hover:bg-[#1E7A7A]/90 text-white mt-4">
+            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white mt-4">
               Upgrade Plan
             </Button>
           </div>
